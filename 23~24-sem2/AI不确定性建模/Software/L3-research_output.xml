@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>CS5340</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7130.0, 5163.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Technical Skill</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<OBS>T</OBS>
+	<PROPERTY>position = (7248.0, 5077.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>PGM Knowledge</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7236.0, 5241.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Novel Idea</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7433.0, 5241.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Paper Accepted</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7538.0, 5142.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Code</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7384.0, 5053.0)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>CS5340</FOR>
+	<TABLE>0.02 0.98</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Technical Skill</FOR>
+	<GIVEN>CS5340</GIVEN>
+	<TABLE>0.8 0.2 0.4 0.6</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>PGM Knowledge</FOR>
+	<GIVEN>CS5340</GIVEN>
+	<TABLE>0.9 0.1 0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Novel Idea</FOR>
+	<GIVEN>PGM Knowledge</GIVEN>
+	<TABLE>0.7 0.3 0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Paper Accepted</FOR>
+	<GIVEN>Technical Skill</GIVEN>
+	<GIVEN>Novel Idea</GIVEN>
+	<TABLE>0.9 0.1 0.7 0.3 0.6 0.4 0.1 0.9</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Code</FOR>
+	<GIVEN>Technical Skill</GIVEN>
+	<TABLE>0.9 0.1 0.05 0.95</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>

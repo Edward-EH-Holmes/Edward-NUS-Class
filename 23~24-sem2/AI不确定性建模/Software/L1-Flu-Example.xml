@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Flu</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7334.0, 5279.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Immune</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7299.0, 5181.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Contact with Infected</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7526.0, 5208.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Fever</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7188.0, 5429.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Sore Throat</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7324.0, 5429.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Runny Nose</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7472.0, 5422.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Flu Test</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7583.0, 5362.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Vaccinated</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7389.0, 5083.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Genetically Immune</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7199.0, 5092.0)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Common Cold</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7116.0, 5295.0)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Flu</FOR>
+	<GIVEN>Immune</GIVEN>
+	<GIVEN>Contact with Infected</GIVEN>
+	<TABLE>0.0 1.0 0.0 1.0 0.3 0.7 0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Immune</FOR>
+	<GIVEN>Vaccinated</GIVEN>
+	<GIVEN>Genetically Immune</GIVEN>
+	<TABLE>1.0 0.0 0.98 0.02 1.0 0.0 0.0 1.0</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Contact with Infected</FOR>
+	<TABLE>0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Fever</FOR>
+	<GIVEN>Flu</GIVEN>
+	<GIVEN>Common Cold</GIVEN>
+	<TABLE>0.9 0.1 0.9 0.1 0.7 0.3 0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Sore Throat</FOR>
+	<GIVEN>Flu</GIVEN>
+	<GIVEN>Common Cold</GIVEN>
+	<TABLE>0.9 0.1 0.9 0.1 0.2 0.8 0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Runny Nose</FOR>
+	<GIVEN>Flu</GIVEN>
+	<GIVEN>Common Cold</GIVEN>
+	<TABLE>0.8 0.2 0.8 0.2 0.8 0.2 0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Flu Test</FOR>
+	<GIVEN>Flu</GIVEN>
+	<GIVEN>Common Cold</GIVEN>
+	<TABLE>0.999 0.001 0.999 0.001 0.01 0.99 0.005 0.995</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Vaccinated</FOR>
+	<TABLE>0.8 0.2</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Genetically Immune</FOR>
+	<TABLE>0.01 0.99</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Common Cold</FOR>
+	<TABLE>0.01 0.99</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>
